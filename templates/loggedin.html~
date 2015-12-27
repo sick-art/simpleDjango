@@ -1,0 +1,14 @@
+<html>
+<body>
+<h1> Welcome <span style='color:blue'>'{{username}}'</span> after logging in !</h1>
+</br>
+<p>Thank You! for logging in</p>
+</br>
+<p> You can logout here : 
+<form method="post" action="/logout">
+{% csrf_token %}
+<input type='submit' value='Logout'/>
+</form> 
+</p>
+</body>
+</html>

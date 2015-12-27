@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+
+<body>
+<p>LOGIN with your <span style = 'color:green'>Username</span> and <span style = 'color:green'>Password</span> :</p>
+</br>
+
+{% if error %}                                                                                                        
+	<p>Error: {{ error }}</p>                                                                                             
+{% endif %}
+
+
+{% if authenticated %}
+	
+	<form method="post" action="/loggedin">
+	</form>
+{% else %}
+	<p>Login:
+	<form method="post" action="/login">
+		{% csrf_token %}
+		UserName: <input name='username' type='text' placeholder='enter username'/> <br/>
+		Password: <input name='password' type='password' placeholder='enter password'/><br/>
+		<input type='submit' value='Login'/>
+	</form>
+	</p>
+{% endif %}
+
+</body>
+</html>
