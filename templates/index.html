@@ -13,7 +13,10 @@
 
 {% if authenticated %}
 	
-	<form method="post" action="/loggedin">
+	You are logged in already as: {{ username }}
+	<form method="post" action="/logout">
+		{% csrf_token %}
+		<input type='submit' value='Logout'/>
 	</form>
 {% else %}
 	<p>Login:
